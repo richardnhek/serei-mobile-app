@@ -1,8 +1,10 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter/material.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'splash_screen_ui.dart';
 import 'package:serei_app/providers/app_provider.dart';
+
+import 'splash_screen_ui.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -58,6 +60,7 @@ class _SplashScreenState extends State<SplashScreen>
     SereiAppProvider sereiAppProvider = Provider.of(context, listen: false);
     await Future.delayed(const Duration(milliseconds: 4800));
     await sereiAppProvider.requestPermissions();
+    await getExternalStorageDirectory();
     await sereiAppProvider
         .getDeviceType(MediaQuery.of(context).size.shortestSide);
     sereiAppProvider.setAppOrientation();

@@ -2,9 +2,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:serei_app/providers/app_provider.dart';
-import 'package:serei_app/utils/ui/device_utils.dart';
-import 'package:serei_app/widgets/categories/categories_tile.dart';
 import 'package:serei_app/widgets/app_search_bar.dart';
+import 'package:serei_app/widgets/categories/categories_tile.dart';
 
 class BigCategoriesUI extends StatelessWidget {
   BigCategoriesUI({this.categoriesList});
@@ -15,17 +14,30 @@ class BigCategoriesUI extends StatelessWidget {
     SereiAppProvider sereiAppProvider = Provider.of<SereiAppProvider>(context);
     return SafeArea(
       child: Column(children: [
-        Container(
-          height: 80,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(
-                "Categories",
-                style: TextStyle(
-                    fontSize: 22.0, fontFamily: "Biko", color: Colors.blue),
-              )
-            ],
+        Padding(
+          padding: EdgeInsets.only(left: 25, right: 25),
+          child: Container(
+            height: 80,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Categories",
+                  style: TextStyle(
+                      fontSize: 22.0,
+                      fontFamily: "Biko",
+                      color: Color(0xFF204E9B)),
+                ),
+                GestureDetector(
+                  onTap: () => {print("Favourite")},
+                  child: Icon(
+                    Icons.favorite,
+                    color: Color(0xFF204E9B),
+                    size: 36,
+                  ),
+                )
+              ],
+            ),
           ),
         ),
         Expanded(
@@ -41,7 +53,9 @@ class BigCategoriesUI extends StatelessWidget {
               crossAxisSpacing: 10.0,
               children: categoriesList,
             ),
-            AppSearchBar(),
+            AppSearchBar(
+              hintText: "What are you looking for",
+            ),
           ]),
         ),
       ]),

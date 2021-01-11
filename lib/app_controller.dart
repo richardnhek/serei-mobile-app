@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'modules/categories/screens/big_categories.dart';
-import 'modules/splash/screens/splash_screen.dart';
+
 import 'main_navigation.dart';
+import 'modules/categories/screens/big_categories.dart';
+import 'modules/categories/screens/sub_categories.dart';
+import 'modules/splash/screens/splash_screen.dart';
 
 class SereiAppController extends StatefulWidget {
   @override
@@ -12,7 +14,8 @@ class _SereiAppControllerState extends State<SereiAppController> {
   final Map<String, Widget> routes = {
     "/": SplashScreen(),
     "/categories": BigCategories(),
-    "/main_navigation": SereiAppMainNavigation()
+    "/main_navigation": SereiAppMainNavigation(),
+    "/sub_categories": SubCategories()
   };
 
   @override
