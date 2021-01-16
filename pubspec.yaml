@@ -59,10 +59,12 @@ flutter:
     - assets/images/categories/sports/android/sports.png
     - assets/images/categories/music&fx/android/music&fx.png
     - assets/images/logo/test_logo.jpg
+    - assets/images/logo/test_logo.png
     - assets/images/sub_categories/logo design/logodesign.png
     - assets/images/sub_categories/brand/brand.png
     - assets/images/sub_categories/business card/businesscard.png
     - assets/images/test/android/profile/techlead.png
+    - assets/icons/edit.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

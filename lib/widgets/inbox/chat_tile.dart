@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:provider/provider.dart';
-import 'package:serei_app/providers/app_provider.dart';
 
 class ChatTile extends StatelessWidget {
   ChatTile({this.profilePath, this.profileName, this.msg});
@@ -16,12 +14,10 @@ class ChatTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SereiAppProvider sereiAppProvider = Provider.of<SereiAppProvider>(context);
-    final mq = MediaQuery.of(context);
     return GestureDetector(
       child: Container(
         child: Padding(
-          padding: EdgeInsets.only(top: 10),
+          padding: EdgeInsets.only(top: 20),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
